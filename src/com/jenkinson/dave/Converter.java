@@ -11,12 +11,17 @@ interface Converter<F, T> {
         Integer converted = converter.convert("123");
         System.out.println(converted);    // 123
 
-        final int num = 1;
+//        final int num = 1;
+//        Converter<Integer, String> stringConverter =
+//                (from) -> String.valueOf(from + num);
+//
+//        stringConverter.convert(2);     // 3
+//
+        int num = 1;
         Converter<Integer, String> stringConverter =
                 (from) -> String.valueOf(from + num);
 
         stringConverter.convert(2);     // 3
-
     }
 
     T convert(F from);
